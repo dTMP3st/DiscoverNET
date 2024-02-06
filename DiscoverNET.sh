@@ -19,7 +19,7 @@ else
 	do
 		Exec_Hour=$(date | cut -d " " -f5)
 		# Time definition - Está funcionando - Adequar hora do servidor.
-		if [ "$Exec_Hour" == "00:00:00" ] || [ "$Exec_Hour" == "08:00:00" ] || [ "$Exec_Hour" == "16:00:00" ] || [ "$Exec_Hour" == "00:43:00" ]; then
+		if [ "$Exec_Hour" == "00:00:00" ] || [ "$Exec_Hour" == "08:00:00" ] || [ "$Exec_Hour" == "16:00:00" ] || [ "$Exec_Hour" == "$2" ]; then
 			Shodan_Start=$(shodan init $1)
 			if [ "$Shodan_Start" == "Successfully initialized" ]; then
 				echo "	[+] Shodan start ..."

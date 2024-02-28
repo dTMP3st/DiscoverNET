@@ -27,7 +27,7 @@ else
 					echo "		[+] Search by $Target_Query ..."
 					shodan search $Target_Query --fields ip_str country:BR 2> /dev/null >> Shodan_IPList.txt
 				done
-					for IP in $(cat Shodan_IPList.txt | sort -u); do
+					for IP in $(cat Shodan_IPList.txt); do
 						Port=$(shodan host $IP --format tsv | cut -d " " -f5,6)
 						echo "	[+] IP => $IP"
 						echo "	[+] Ports:"
@@ -38,16 +38,10 @@ else
 					done
 					# Apenas para listar IPs - cat Shodan_IPList.txt
 					# Versão final -  tail -f Shodan_IPList.txt
-			elif [ "$Exec_Hour" == "23:00:00" ]; then
-				# Execução do scan do Shodan.
-				# shodan scan submit
 			else
 				echo "	[-] Shodan failure ..."
 				exit
 			fi
-			# Insert Censys code.
-
-			if [  ]
 		else
 			echo "	[-] - Wait time to execute ..." >> /dev/null
 		fi

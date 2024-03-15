@@ -50,3 +50,4 @@ fi
 
 # Criar regra de detecção.
 # Equipamento exposto para a Internet mapeado pelo Shodan.
+# Implementar CensysSearch e ZoomEye
